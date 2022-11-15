@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Alatsi&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+
+.menu-link {
+  font-family: "Raleway", sans-serif !important;
+  font-size: 1vw !important;
+}
+
+#logo img {
+  padding: 0.5vw 0;
+}
+
+.fbox-icon i,
+.fbox-icon img {
+  background-color: #0c4da2 !important;
+}
+
+.section-clients {
+  background-color: #fff !important;
+}
+
+h2,
+.fbox-content h3,
+.heading-block h2 {
+  font-family: Poppins, sans-serif !important;
+}
+
+.heading-block h2 {
+  font-weight: bold !important;
+  text-transform: uppercase !important;
+}
+
+.counter + h5 {
+  font-weight: bold !important;
+  font-family: Poppins, sans-serif !important;
+}
+
+.section-about::before {
+  transform: rotate(0);
+}
+
+.btn-primary {
+  background-color: #0c4da2 !important;
+  border-color: #0c4da2 !important;
+}
+
+.dark .owl-carousel .owl-dots .owl-dot,
+body:not(.dark) #copyrights {
+  background-color: #083979 !important;
+}
