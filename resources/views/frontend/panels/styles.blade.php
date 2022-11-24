@@ -1,39 +1,29 @@
-<link
-href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Poppins:300,400,500,600,700|PT+Serif:400,400i&amp;display=swap"
-rel="stylesheet"
-type="text/css"
-/>
-<link
-  href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700|Roboto:300,400,500,700&amp;display=swap"
-  rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="{{ asset('themes/frontend/fhm/demos/articles/articles.css') }}" type="text/css" />
-<link rel="stylesheet" href="{{ asset('themes/frontend/fhm/./FHMtemp-agency.css') }}" type="text/css" />
-<link rel="stylesheet" href="{{ asset('themes/frontend/fhm/css/bootstrap.css') }}" type="text/css" />
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ asset('themes/frontend/watches/css/bootstrap.css') }}" type="text/css" />
+<link rel="stylesheet" href="{{ asset('themes/frontend/watches/style.css') }}" type="text/css" />
+<link rel="stylesheet" href="{{ asset('themes/frontend/watches/css/swiper.css') }}" type="text/css" />
 
 <!-- shop Demo Specific Stylesheet -->
-<link rel="stylesheet" href="{{ asset('themes/frontend/fhm/style.css') }}" type="text/css" />
-<link rel="stylesheet" href="{{ asset('themes/frontend/fhm/css/swiper.css') }}" type="text/css" />
+<link rel="stylesheet" href="{{ asset('themes/frontend/watches/css/dark.css') }}" type="text/css" />
+<link rel="stylesheet" href="{{ asset('themes/frontend/watches/css/font-icons.css') }}" type="text/css" />
 <!-- / -->
 
 <!-- Construction Demo Specific Stylesheet -->
-<link rel="stylesheet" href="{{ asset('themes/frontend/fhm/css/dark.css') }}"
+<link rel="stylesheet" href="{{ asset('themes/frontend/watches/css/animate.css') }}"
   type="text/css" />
-<link rel="stylesheet" href="{{ asset('themes/frontend/fhm/css/font-icons.css') }}" type="text/css" />
+<link rel="stylesheet" href="{{ asset('themes/frontend/watches/css/magnific-popup.css') }}" type="text/css" />
 
 <!-- / -->
 
-<link rel="stylesheet" href="{{ asset('themes/frontend/fhm/css/animate.css') }}" type="text/css" />
-<link rel="stylesheet" href="{{ asset('themes/frontend/fhm/css/magnific-popup.css') }}" type="text/css" />
-<link rel="stylesheet" href="{{ asset('themes/frontend/fhm/css/custom.css') }}" type="text/css" />
-<link rel="stylesheet" href="{{ asset('themes/frontend/fhm/include/rs-plugin/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css') }}" type="text/css" />
+<link rel="stylesheet" href="{{ asset('themes/frontend/watches/css/custom.css') }}" type="text/css" />
+<link rel="stylesheet" href="{{ asset('themes/frontend/watches/css/colors9bb7.css?color=193532') }}" type="text/css" />
+<link rel="stylesheet" href="{{ asset('themes/frontend/watches/demos/furniture/furniture.css') }}" type="text/css" />
+<link rel="stylesheet" href="{{ asset('themes/frontend/watches/demos/furniture/css/fonts.css') }}" type="text/css" />
 
-<link rel="stylesheet" href="{{ asset('themes/frontend/fhm/demos/articles/css/fonts.css') }}"
+<link rel="stylesheet" href="{{ asset('themes/frontend/watches/fhm_watches.css') }}"
   type="text/css" />
-
-<link rel="stylesheet" href="{{ asset('themes/frontend/fhm/include/rs-plugin/css/addons/revolution.addon.explodinglayers.css') }}" type="text/css" />
-<link rel="stylesheet" href="{{ asset('themes/frontend/fhm/include/rs-plugin/css/settings.css') }}" type="text/css" />
-<link rel="stylesheet" href="{{ asset('themes/frontend/fhm/include/rs-plugin/css/layers.css') }}" type="text/css" />
-<link rel="stylesheet" href="{{ asset('themes/frontend/fhm/include/rs-plugin/css/navigation.css') }}" type="text/css" />
 
 <style>
   .widget>h4 {
@@ -93,6 +83,12 @@ type="text/css"
   .menu-item .sub-menu-trigger {
     color: #FFF;
   }
+.breadcrumb-item + .breadcrumb-item::before {
+  float: left;
+  padding-right: 0.5rem;
+  color: #6c757d;
+  content: var(--bs-breadcrumb-divider, "/");
+}
 </style>
 
 @isset($web_information->source_code->header)

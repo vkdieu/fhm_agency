@@ -9,54 +9,42 @@
     $url_link_title = $block->json_params->url_link_title->{$locale} ?? $block->url_link_title;
     
   @endphp
-  <section class="contact bg-light" id="contact">
+   
+  <div id="form" class="section bg-transparent my-0 py-0" method="post" action="{{ route('frontend.contact.store') }}">
+    @csrf
     <div class="container-fluid">
       <div class="row">
-        <div class="col-xl-6 col-lg-12">
-          {!! $content !!}
+        <div class="col-lg-6 col-sm-12 g-0">
+          <img
+            src="{{$image}}"
+            alt=""
+          />
         </div>
+        <div
+          class="col-lg-6 col-sm-12 g-0 d-flex flex-column justify-content-center align-items-center findout-image"
+        >
+          <div
+            class="border-bottom-0 mb-0 p-4 d-flex flex-column"
+            style="max-width: 550px"
+          >
+            <h1 class="fw-normal font-secondary fst-normal mb-5">
+              {{ $title}}
+            </h1>
+            <input
+              type="text"
+              placeholder="Your email..."
+              class="mb-3"
+            />
 
-        <div class="col-xl-6 col-lg-12">
-          <div class="text-center pb-3">
-            <h2>{{ $title }}</h2>
+            <a
+              href="{{$url_link}}"
+              class="button button-large button-light text-dark bg-transparent border nott m-0 ls0 text-center mt-3"
+              style="max-width: 200px"
+              > {{$url_link_title}}</a
+            >
           </div>
-          <form class="contact-form form_ajax" method="post" action="{{ route('frontend.contact.store') }}">
-            @csrf
-            <div class="form-group">
-              <input type="text" class="form-control" id="name" name="name" required value=""
-                autocomplete="off" onkeyup="this.setAttribute('value', this.value);" />
-              <label for="name">@lang('Fullname') *</label>
-              <span class="input-border"></span>
-            </div>
-            <div class="form-group">
-              <input type="email" class="form-control" id="email" name="email" value="" autocomplete="off"
-                onkeyup="this.setAttribute('value', this.value);" />
-              <label for="email">Email</label>
-              <span class="input-border"></span>
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" id="phone" name="phone" required value=""
-                autocomplete="off" onkeyup="this.setAttribute('value', this.value);" />
-              <label for="subject">@lang('Phone') *</label>
-              <span class="input-border"></span>
-            </div>
-            <div class="form-group">
-              <textarea class="form-control" id="content" name="content" required data-value="" autocomplete="off"
-                onkeyup="this.setAttribute('data-value', this.value);"></textarea>
-              <label for="message">@lang('Content') *</label>
-              <span class="input-border"></span>
-            </div>
-            <!-- Button Send Message  -->
-            <input type="hidden" name="is_type" value="call_request">
-            <button class="contact-btn main-btn" type="submit" name="send">
-              <span>@lang('Gửi đăng ký')</span>
-            </button>
-            <!-- Form Message  -->
-            <div class="form-message text-center"><span></span></div>
-          </form>
         </div>
-
       </div>
     </div>
-  </section>
+  </div>
 @endif

@@ -14,14 +14,20 @@
     
   @endphp
 
-  <div class="container clearfix" id="services">
-    <div class="clear"></div>
+<div class="container">
+<p class="titular-sub-title text-primary fw-bold center">
+ {{$title}}
+</p>
+<h1
+  class="titular-title fw-normal center font-secondary fst-normal mb-0"
+>
+  {{$brief}}
+</h1>
 
-    <div class="fancy-title title-center title-border topmargin">
-      <h3>{{ $title }}</h3>
-    </div>
+<div class="clear mb-5"></div>
+<div class="row posts-md col-mb-30">
 
-    <div class="row justify-content-center col-mb-50 mb-0">
+
       @isset($rows)
         @foreach ($rows as $item)
           @php
@@ -33,32 +39,38 @@
             $alias = App\Helpers::generateRoute(App\Consts::TAXONOMY['service'], $title, $item->id, 'detail');
             
           @endphp
-          <div class="col-sm-6 col-lg-4">
-            <div class="feature-box media-box fbox-bg">
-              <div class="fbox-media">
-                <a href="{{ $alias }}">
-                  <img src="{{ $image }}" alt="{{ $title }}" style="border-radius: 0" />
-                </a>
+          <div class="col-lg-3 col-md-6">
+            <div class="entry">
+              <div class="entry-image">
+                <a href=" {{ $alias }} "
+                  ><img
+                    src="{{$image}}"
+                    alt="Image"
+                /></a>
               </div>
-              <div class="fbox-content">
-                
-                  <h3 class="text-center mb-3">
-                    <a href="{{ $alias }}">
-                    {{ $title }}
-                  </a>
-                  </h3>
-                
-                <span class="subtitle">
+              <div class="entry-title title-xs nott">
+                <h3>
+                  <a href="{{ $alias }}"
+                    >{{$title}}</a
+                  >
+                </h3>
+              </div>
+
+              <div class="entry-content">
+                <p>
                   {!! nl2br(Str::limit($brief, 200)) !!}
-                </span>
+                </p>
               </div>
             </div>
           </div>
+        
         @endforeach
       @endisset
     </div>
-
-    <div class="clear"></div>
   </div>
+</div>
+<!-- END BLOGS -->
+</div>
+</section>
   
 @endif

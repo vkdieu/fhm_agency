@@ -30,12 +30,18 @@
 </head>
 
 <body class="stretched">
+  <!-- Cart Panel Background
+============================================= -->
+  <div class="body-overlay"></div>
+
+
+
   <!-- Document Wrapper
 ============================================= -->
   <div id="wrapper" class="clearfix">
-
     @include('frontend.blocks.header.styles.default')
-
+    <section id="content">
+      <div class="content-wrap py-0">
 
     {{-- Foreach and print block content by current page --}}
     @if (isset($blocks_selected))

@@ -14,11 +14,12 @@
         });
         
     ?>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-5">
-                <div class="heading-block">
-                    <h2 class="fw-normal ls0 nott mb-3 font-primary">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5">
+        <div class="heading-block">
+            <h2 class="fw-normal ls0 nott mb-3 font-primary">
+
                         <?php echo e($title); ?>
 
                     </h2>
@@ -30,10 +31,11 @@
             </div>
             <div class="col-md-6 offset-0 offset-md-1 mt-5 mt-md-0">
                 <div class="circle-border">
-                    <div class="feature-content">
-                        <div class="d-flex align-items-center justify-content-between h-100">
-                            <div>
-
+                  <div class="feature-content">
+                    <div
+                      class="d-flex align-items-center justify-content-between h-100"
+                    >
+                      <div>
 
                                 <?php if($block_childs): ?>
                                     <?php $__currentLoopData = $block_childs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>

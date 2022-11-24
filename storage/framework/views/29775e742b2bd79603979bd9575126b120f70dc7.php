@@ -14,8 +14,7 @@
         return $item->parent_id == $block->id;
     });
   ?>
-       <section id="content">
-        <div class="content-wrap">
+     
           <div class="section-about">
             <!-- <div class="section border-top-0 m-0">
               <div class="container text-center">

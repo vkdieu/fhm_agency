@@ -13,16 +13,29 @@
     $rows = App\Http\Services\ContentService::getCmsPost($params)->get();
     
   @endphp
-  <div class="container clearfix product-wrap">
-    <div class="clear"></div>
+     <!-- START BESTSELLER -->
+     <div class="section bg-transparent mb-0">
+      <div class="container">
+        <p class="titular-sub-title text-primary fw-bold center">
+          {{$title}}
+        </p>
+        <h1
+          class="titular-title fw-normal center font-secondary fst-normal"
+        >
+          {{$brief}}
+        </h1>
 
-    <div class="fancy-title title-center title-border topmargin">
-      <h3 class="product-title-highlight">{{ $title }}</h3>
-    </div>
-
-    <div id="oc-products" class="owl-carousel products-carousel carousel-widget" data-pagi="false" data-items-xs="1"
-      data-loop="true" data-autoplay="2000" data-items-sm="2" data-items-md="3" data-items-lg="4">
-
+        <div class="clear mb-5"></div>
+      </div>
+      <div class="container">
+        <!-- Portfolio Items
+    ============================================= -->
+        <div
+          id="portfolio"
+          class="portfolio row grid-container gutter-20"
+          data-layout="fitRows"
+        >
+          <!-- Portfolio Item: Start -->
       @foreach ($rows as $item)
         @php
           $title = $item->json_params->title->{$locale} ?? $item->title;
@@ -33,51 +46,74 @@
           // $alias_category = App\Helpers::generateRoute(App\Consts::TAXONOMY['product'], $item->taxonomy_title, $item->taxonomy_id);
           $alias = App\Helpers::generateRoute(App\Consts::TAXONOMY['product'], $title, $item->id, 'detail');
         @endphp
-        <div class="oc-item">
-          <div class="product">
-            <div class="product-image">
-              <a href="{{ $alias }}">
-                <img src="{{ $image }}" alt="{{ $title }}" /></a>
-              <a href="{{ $alias }}">
-                <img src="{{ $image }}" alt="{{ $title }}" /></a>
-              <div class="bg-overlay">
-                <div class="bg-overlay-content align-items-end justify-content-between" data-hover-animate="fadeIn"
-                  data-hover-speed="400">
-                  <a href="javascript:void(0)" title="@lang('Add to cart')" class="btn btn-dark me-2 add-to-cart"
-                    data-id="{{ $item->id }}" data-quantity="1"><i class="icon-shopping-basket"></i></a>
-                  <a href="{{ $alias }}" class="btn btn-dark" title="@lang('Detail')"><i
-                      class="icon-line-expand"></i></a>
+      
+        <article
+        class="portfolio-item col-lg-3 col-md-4 col-sm-6 col-12 pf-media pf-icons"
+      >
+        <!-- Grid Inner: Start -->
+        <div class="grid-inner">
+          <!-- Image: Start -->
+          <div class="portfolio-image">
+            <a href="portfolio-single.html">
+              <img
+                src="{{$image}}"
+                alt="Open Imagination"
+              />
+            </a>
+            <!-- Overlay: Start -->
+            <div class="bg-overlay">
+              <div
+                class="bg-overlay-content dark flex-column"
+                data-hover-animate="fadeIn"
+                style="background-color: rgba(255, 255, 255, 0.9)"
+              >
+                <!-- Decription: Start -->
+                <div
+                  class="portfolio-desc pt-0 center"
+                  data-hover-animate="fadeInDownSmall"
+                  data-hover-animate-out="fadeOutUpSmall"
+                  data-hover-speed="350"
+                >
+                  <h3>
+                    <a href="portfolio-single.html"
+                      >{{$title}}</a
+                    >
+                  </h3>
+                  <span>{{ isset($item->json_params->price) && $item->json_params->price > 0 ? number_format($item->json_params->price, 0, ',', '.') . ' đ' : __('Contact') }}</span>
                 </div>
-                <div class="bg-overlay-bg bg-transparent"></div>
+                <!-- Description: End -->
+                <div class="d-flex">
+                  <a
+                    href="https://splendour.themerex.net/wp-content/uploads/2020/05/prod15-500x600.jpg"
+                    class="overlay-trigger-icon bg-light text-dark"
+                    data-hover-animate="fadeInUpSmall"
+                    data-hover-animate-out="fadeOutDownSmall"
+                    data-hover-speed="350"
+                    data-lightbox="image"
+                    title="Image"
+                    ><i class="icon-line-plus"></i
+                  ></a>
+                  <a
+                    href="portfolio-single.html"
+                    class="overlay-trigger-icon bg-light text-dark"
+                    data-hover-animate="fadeInUpSmall"
+                    data-hover-animate-out="fadeOutDownSmall"
+                    data-hover-speed="350"
+                    ><i class="icon-line-ellipsis"></i
+                  ></a>
+                </div>
               </div>
+              <div
+                class="bg-overlay-bg dark"
+                data-hover-animate="fadeIn"
+              ></div>
             </div>
-            <div class="product-desc center">
-              <div class="product-title-highlight">
-                <h3>
-                  <a href="{{ $alias }}">{{ $title }}</a>
-                </h3>
-              </div>
-              <div class="product-price">
-                @if (isset($item->json_params->price_old) && $item->json_params->price_old > 0)
-                  <del>
-                    {{ number_format($item->json_params->price_old, 0, ',', '.') }} đ
-                  </del>
-                @endif
-                <ins>
-                  {{ isset($item->json_params->price) && $item->json_params->price > 0 ? number_format($item->json_params->price, 0, ',', '.') . ' đ' : __('Contact') }}
-                </ins>
-
-              </div>
-              <div class="product-rating">
-                <i class="icon-star3"></i>
-                <i class="icon-star3"></i>
-                <i class="icon-star3"></i>
-                <i class="icon-star3"></i>
-                <i class="icon-star3"></i>
-              </div>
-            </div>
+            <!-- Overlay: End -->
           </div>
+          <!-- Image: End -->
         </div>
+        <!-- Grid Inner: End -->
+      </article>
       @endforeach
 
     </div>

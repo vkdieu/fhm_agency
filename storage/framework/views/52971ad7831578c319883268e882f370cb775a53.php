@@ -13,9 +13,9 @@
         return $item->parent_id == $block->id;
     });
   ?>
-     <div class="section border-top-0 m-0 section-clients">
-      <div class="container clearfix">
-        <div class="heading-block center">
+ <div class="section border-top-0 m-0 section-clients">
+  <div class="container clearfix">
+    <div class="heading-block center">
           <h2><?php echo e($title); ?></h2>
           <span><?php echo e($brief); ?></span>
         </div>
@@ -60,6 +60,6 @@
     </ul>
   </div>
 </div>
-</section>
+
 <?php endif; ?>
 <?php /**PATH C:\xampp\htdocs\FHM_agency\resources\views/frontend/blocks/custom/styles/customer.blade.php ENDPATH**/ ?>

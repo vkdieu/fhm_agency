@@ -12,7 +12,9 @@
         return $item->parent_id == $block->id;
     });
   ?>
-<section id="slider" class="slider-element revslider-wrap">
+    <section id="content">
+      <div class="content-wrap">
+<div id="slider" class="slider-element revslider-wrap">
   <div
     id="rev_slider_126_1_wrapper"
     class="rev_slider_wrapper fullscreen-container"
@@ -248,7 +250,7 @@
                 <!-- LAYER NR. 6 -->
                 <a
                   class="tp-caption rev-btn tp-resizeme tp-pointer"
-                  href="https://themeforest.net/item/canvas-the-multipurpose-html5-template/9228123?ref=SemiColonWeb&amp;license=regular&amp;open_purchase_for_item_id=9228123&amp;purchasable=source"
+                  href="<?php echo e($url_link); ?>"
                   target="_self"
                   id="slide-283-layer-41"
                   data-x="['left','left','left','left']"
@@ -401,7 +403,7 @@
                     color: #000000;
                     letter-spacing: 0px;
                     display: inline-block;
-                    font-family: Poppins;
+                    font-family: 'Raleway', sans-serif;
                   "
                 >
  
@@ -474,7 +476,7 @@
                     color: #000000;
                     letter-spacing: 0px;
                     display: inline-block;
-                    font-family: Poppins;
+                    font-family: 'Raleway', sans-serif;
                   "
                 >
                   <?php echo nl2br($content); ?>
@@ -999,7 +1001,7 @@
           font-weight: 700;
           color: #ffffff;
           letter-spacing: -25px;
-          font-family: Poppins;
+          font-family: 'Raleway', sans-serif;
         "
       >
         <?php echo e($title); ?>
@@ -1221,6 +1223,6 @@
 </div>
 </div>
 <!-- END REVOLUTION SLIDER -->
-</section>
+</div>
 <?php endif; ?>
 <?php endif; ?><?php /**PATH C:\xampp\htdocs\FHM_agency\resources\views/frontend/blocks/banner/styles/slide.blade.php ENDPATH**/ ?>

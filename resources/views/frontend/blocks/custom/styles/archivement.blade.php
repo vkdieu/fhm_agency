@@ -14,11 +14,12 @@
         });
         
     @endphp
-    <div class="container">
-        <div class="row">
-            <div class="col-md-5">
-                <div class="heading-block">
-                    <h2 class="fw-normal ls0 nott mb-3 font-primary">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5">
+        <div class="heading-block">
+            <h2 class="fw-normal ls0 nott mb-3 font-primary">
+
                         {{ $title }}
                     </h2>
                 </div>
@@ -28,10 +29,11 @@
             </div>
             <div class="col-md-6 offset-0 offset-md-1 mt-5 mt-md-0">
                 <div class="circle-border">
-                    <div class="feature-content">
-                        <div class="d-flex align-items-center justify-content-between h-100">
-                            <div>
-
+                  <div class="feature-content">
+                    <div
+                      class="d-flex align-items-center justify-content-between h-100"
+                    >
+                      <div>
 
                                 @if ($block_childs)
                                     @foreach ($block_childs as $item)

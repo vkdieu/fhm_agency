@@ -1,0 +1,107 @@
+.menu-link div {
+  font-weight: 300 !important;
+}
+
+#page-title {
+  padding: 10rem 0;
+}
+
+#page-title h1 {
+  font-weight: 400;
+  font-size: 4rem;
+}
+
+.product-title h3 {
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.product-price,
+.product-price ins,
+.product-price del {
+  font-weight: 300;
+}
+
+.widget > h4 {
+  font-weight: 400;
+}
+
+.widget_links li {
+  font-size: 0.725rem;
+  padding: 8px 0 !important;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.widget-filter-links .widget-filter-reset a,
+.menu-item:hover > .menu-link,
+.current,
+.product-price ins,
+.product-title h3 a:hover {
+  color: rgb(158, 132, 83) !important;
+}
+
+.widget-filter-links li.active-filter span {
+  background-color: rgb(158, 132, 83) !important;
+}
+
+/* FILTER */
+
+.irs-line,
+.irs--flat .irs-bar {
+  height: 7px !important;
+}
+
+.irs--flat .irs-bar {
+  background-color: #000 !important;
+}
+
+.irs--flat .irs-from,
+.irs--flat .irs-to {
+  border-radius: 0px !important;
+  background-color: #000 !important;
+}
+
+.irs--flat .irs-handle > i:first-child,
+.irs--flat .irs-handle > i:last-child {
+  height: 75% !important;
+  background-color: #000 !important;
+}
+
+.irs--flat .irs-line,
+.irs--flat .irs-min,
+.irs--flat .irs-max {
+  border-radius: 0px !important;
+}
+
+/* PAGINATION */
+
+.pagination .page-item .page-link,
+.pagination-lg .page-item:last-child .page-link,
+.pagination-lg .page-item:first-child .page-link {
+  border-radius: 0px;
+  margin-left: 8px;
+}
+
+.page-item.active .page-link,
+.page-link:focus,
+.page-link:hover {
+  background-color: #000 !important;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+  #page-title {
+    padding: 5rem 0;
+  }
+
+  #page-title h1 {
+    font-size: 2rem;
+  }
+
+  .pagination {
+    justify-content: center;
+  }
+}

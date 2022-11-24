@@ -1,74 +1,61 @@
+<footer id="footer" class="light border-0 bg-light">
+    <div class="container">
+      <!-- Footer Widgets
+      ============================================= -->
+      <div class="footer-widgets-wrap">
+        <div class="row col-mb-50">
+          <div class="col-lg-4">
+            <div class="widget clearfix">
+              <div class="footer-logo-wrapper">
+                <img src="<?php echo e($web_information->image->logo_footer ?? ''); ?>" width="auto" height="auto" alt="Image"
+                  style="width: 100%" class="footer-logo">
+              </div>
+            </div>
+          </div>
+  
+          <?php if(isset($menu)): ?>
+            <?php
+              $footer_menu = $menu->filter(function ($item, $key) {
+                  return $item->menu_type == 'footer' && ($item->parent_id == null || $item->parent_id == 0);
+              });
+              
+              $content = '';
+              foreach ($footer_menu as $main_menu) {
+                  $url = $title = '';
+                  $title = isset($main_menu->json_params->title->{$locale}) && $main_menu->json_params->title->{$locale} != '' ? $main_menu->json_params->title->{$locale} : $main_menu->name;
+                  $content .= '<div class="col-sm-6 col-lg-4"><div class="widget widget_links">';
+                  $content .= '<h4>' . $title . '</h4>';
+                  $content .= '<ul>';
+                  foreach ($menu as $item) {
+                      if ($item->parent_id == $main_menu->id) {
+                          $title = isset($item->json_params->title->{$locale}) && $item->json_params->title->{$locale} != '' ? $item->json_params->title->{$locale} : $item->name;
+                          $url = $item->url_link;
+              
+                          $active = $url == url()->current() ? 'active' : '';
+              
+                          $content .= '<li><a href="' . $url . '">' . $title . '</a>';
+                          $content .= '</li>';
+                      }
+                  }
+                  $content .= '</ul>';
+                  $content .= '</div></div>';
+              }
+              echo $content;
+            ?>
+          <?php endif; ?>
+          <?php if(isset($web_information->source_code->facebook_fanpage)): ?>
+            <div class="col-sm-6 col-lg-4">
+              <div class="widget clearfix">
+                <h4>Facebook fanpage</h4>
+                <?php echo $web_information->source_code->facebook_fanpage; ?>
 
-<footer
-id="footer"
-class="dark"
-data-scrollto-settings='{"offset":140,"speed":1250,"easing":"easeOutQuad"}'
->
-<!-- Copyrights
-============================================= -->
-<div id="copyrights">
-  <div class="container">
-    <div class="row col-mb-30">
-      <div class="col-md-6 text-center text-md-start">
-        Copyrights © 2022 All Rights Reserved by FHM Agency.<br />
-        <div class="copyright-links">
-          <a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a>
+              </div>
+            </div>
+          <?php endif; ?>
         </div>
       </div>
-
-      <div class="col-md-6 text-center text-md-end">
-        <div
-          class="d-flex justify-content-center justify-content-md-end"
-        >
-          <a
-            href="<?php echo e($web_information->social->facebook); ?>"
-            class="social-icon si-small si-borderless si-facebook"
-          >
-            <i class="icon-facebook"></i>
-            <i class="icon-facebook"></i>
-          </a>
-
-          <a
-            href="<?php echo e($web_information->social->twitter); ?>"
-            class="social-icon si-small si-borderless si-twitter"
-          >
-            <i class="icon-twitter"></i>
-            <i class="icon-twitter"></i>
-          </a>
-
-     
-
-       
-
-         
-
-
-      
-
-        </div>
-
-        <div class="clear"></div>
-
-        <i class="icon-envelope2"></i>  <?php if(isset($web_information->information->email)): ?>
-
-        <?php echo e($web_information->information->email); ?>
-
-    <?php endif; ?>
-        <span class="middot">·</span>
-        <i class="icon-headphones"></i> 
-         <?php if(isset($web_information->information->phone)): ?>
-        <?php echo e($web_information->information->phone); ?>
-
-    <?php endif; ?>
-        <span class="middot">·</span>
-        <i class="icon-skype2"></i>  <?php if(isset($web_information->information->skype)): ?>
-        <?php echo e($web_information->information->skype); ?>
-
-    <?php endif; ?>
-      </div>
+      <!-- .footer-widgets-wrap end -->
     </div>
-  </div>
-</div>
-<!-- #copyrights end -->
-</footer>
-<?php /**PATH C:\xampp\htdocs\FHM_agency\resources\views/frontend/blocks/footer/styles/default.blade.php ENDPATH**/ ?>
+  
+    <!-- #copyrights end -->
+  </footer><?php /**PATH C:\xampp\htdocs\FHM_agency\resources\views/frontend/blocks/footer/styles/default.blade.php ENDPATH**/ ?>
